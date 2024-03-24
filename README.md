@@ -4,7 +4,7 @@ Bienvenue sur le repository GitHub finale de notre projet universitaire dédié 
 <h3>Contexte</h3>
 
 Ce projet a été réalisé dans le cadre d'un cours universitaire mettant l'accent sur le développement web et la conception d'API. Nous avons choisi de concevoir un site web pour un restaurant de sushi, une entreprise qui nécessite souvent une plateforme en ligne pour permettre aux clients de réserver et parcourir le menu.
-Voici le [cahier des charges](https://github.com/IlyesBo/SAE401/blob/main/Documentation/Cahier%20des%20charges.pdf) qui nous a été fournis.
+Voici le [cahier des charges](https://github.com/IlyesBo/SAE401_V2/blob/main/SAE401_V2/Documentation/RGPD_SUSHILL.pdf) qui nous a été fournis.
 
 <h4>Technologies utilisées:</h4>
 Front-end: Angular, Bootstrap, HTML, CSS, TypeScript <br>
