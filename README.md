@@ -166,7 +166,7 @@ https://github.com/IlyesBo/SAE401/commits/main/
 
 <h2 id="rgpd">Page pour la prise en compte des règles RGPD liées à l'application</h2>
 
-La page de politique de confidentialité sera accéssible dans le footer, [cliquez-ici pour visualiser le rgpd en pdf](https://github.com/IlyesBo/SAE401/blob/main/Documentation/RGPD_SUSHILL.pdf).
+La page de politique de confidentialité sera accéssible dans le footer, [cliquez-ici pour visualiser le rgpd en pdf](https://github.com/IlyesBo/SAE401_V2/blob/main/SAE401_V2/Documentation/RGPD_SUSHILL.pdf).
 
 <h2 id="user-evil">Document comprenent des scénarios malveillants et les mesures pour les contrecarrer</h2>
 
