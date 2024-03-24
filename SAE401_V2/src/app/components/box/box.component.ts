@@ -1,6 +1,6 @@
 // box.component.ts
 import { Component, OnInit } from '@angular/core';
-import { PanierService } from '../../panier.service';
+import { PanierService } from '../../services/panier.service';
 
 @Component({
   selector: 'app-box',

@@ -44,4 +44,13 @@ export class PanierService {
     // Gérer la logique de commande ici
     // (vous pouvez ajouter votre logique ici si nécessaire)
   }
+
+  ajouterAuPanier(nouvelElement: any) {
+    // Ajouter le nouvel élément au panier
+    this._panier.push(nouvelElement);
+    // Recalculer le total du panier
+    this.calculTotal();
+    // Mettre à jour le panier dans le stockage local ou envoyer au backend
+    this.mettreAJourPanier();
+  }
 }
