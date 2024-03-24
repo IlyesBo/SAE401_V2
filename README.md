@@ -158,7 +158,7 @@ Voici la version finale:
 <h2 id="intégralité-du-code-de-la-partie-front-avec-suivi-des-mises-à-jour">Intégralité du code de la partie Front avec suivi des mises à jour</h2>
 
 Cliquez sur le lien ci-dessous pour visualiser:
-https://github.com/IlyesBo/SAE401/commits/main/
+Sur l'ancien repository: https://github.com/IlyesBo/SAE401/commits/main/ <br> Sur le nouveau:https://github.com/IlyesBo/SAE401_V2/commits/main/
 
 ![image](https://github.com/IlyesBo/SAE401/assets/115214794/b9826d46-7463-4733-908a-384df3e84d75)
 
