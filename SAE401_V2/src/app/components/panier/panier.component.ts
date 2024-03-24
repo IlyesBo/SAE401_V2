@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-panier',
-  standalone: true,
-  imports: [],
   templateUrl: './panier.component.html',
-  styleUrl: './panier.component.css'
+  styleUrls: ['./panier.component.css']
 })
-export class PanierComponent {
+export class PanierComponent implements OnInit {
+  bagBoxes: any[] = []; 
+  totalPrix: number = 0;
+  noBoxFound: boolean = true; 
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
+  suppBox(itemID: any): void {
+ 
+  }
+
+
+  Commander(): void {
+  }
 }
