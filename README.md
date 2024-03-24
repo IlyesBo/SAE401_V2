@@ -86,7 +86,7 @@ Nathan l'a imaginé et dessiné sur le logiel Procreate en créant également de
 
 Cliquez sur le lien ci-dessous pour accéder au code de notre api REST:
 
-https://github.com/IlyesBo/SAE401/tree/main/apiSushi
+https://github.com/IlyesBo/SAE401_V2/tree/main/SAE401_V2/apiSushi
 
 ![image](https://github.com/IlyesBo/SAE401/assets/115214794/807ab436-d445-47ea-9a1f-512982485947)
 
