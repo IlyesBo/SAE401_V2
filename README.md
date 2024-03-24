@@ -4,7 +4,7 @@ Bienvenue sur le repository GitHub finale de notre projet universitaire dédié 
 <h3>Contexte</h3>
 
 Ce projet a été réalisé dans le cadre d'un cours universitaire mettant l'accent sur le développement web et la conception d'API. Nous avons choisi de concevoir un site web pour un restaurant de sushi, une entreprise qui nécessite souvent une plateforme en ligne pour permettre aux clients de réserver et parcourir le menu.
-Voici le [cahier des charges](https://github.com/IlyesBo/SAE401/blob/main/Documentation/Cahier%20des%20charges.pdf) qui nous a été fournis.
+Voici le [cahier des charges](https://github.com/IlyesBo/SAE401_V2/blob/main/SAE401_V2/Documentation/RGPD_SUSHILL.pdf) qui nous a été fournis.
 
 <h4>Technologies utilisées:</h4>
 Front-end: Angular, Bootstrap, HTML, CSS, TypeScript <br>
@@ -158,7 +158,7 @@ Voici la version finale:
 <h2 id="intégralité-du-code-de-la-partie-front-avec-suivi-des-mises-à-jour">Intégralité du code de la partie Front avec suivi des mises à jour</h2>
 
 Cliquez sur le lien ci-dessous pour visualiser:
-https://github.com/IlyesBo/SAE401/commits/main/
+Sur l'ancien repository: https://github.com/IlyesBo/SAE401/commits/main/ <br> Sur le nouveau:https://github.com/IlyesBo/SAE401_V2/commits/main/
 
 ![image](https://github.com/IlyesBo/SAE401/assets/115214794/b9826d46-7463-4733-908a-384df3e84d75)
 
@@ -166,11 +166,11 @@ https://github.com/IlyesBo/SAE401/commits/main/
 
 <h2 id="rgpd">Page pour la prise en compte des règles RGPD liées à l'application</h2>
 
-La page de politique de confidentialité sera accéssible dans le footer, [cliquez-ici pour visualiser le rgpd en pdf](https://github.com/IlyesBo/SAE401/blob/main/Documentation/RGPD_SUSHILL.pdf).
+La page de politique de confidentialité sera accéssible dans le footer, [cliquez-ici pour visualiser le rgpd en pdf](https://github.com/IlyesBo/SAE401_V2/blob/main/SAE401_V2/Documentation/RGPD_SUSHILL.pdf).
 
 <h2 id="user-evil">Document comprenent des scénarios malveillants et les mesures pour les contrecarrer</h2>
 
-Nos user evil stories sont visualisables en [cliquant sur ce lien qui ramène au pdf](https://github.com/IlyesBo/SAE401/blob/main/Documentation/SCENARIOS_MALVEILLANT_SUSHILL.pdf).
+Nos user evil stories sont visualisables en [cliquant sur ce lien qui ramène au pdf](https://github.com/IlyesBo/SAE401_V2/blob/main/SAE401_V2/Documentation/SCENARIOS_MALVEILLANT_SUSHILL.pdf).
 
 
 
