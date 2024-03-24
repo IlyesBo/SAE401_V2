@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+// box.component.ts
+import { Component, OnInit } from '@angular/core';
+import { PanierService } from '../../panier.service';
 
 @Component({
   selector: 'app-box',
-  standalone: true,
-  imports: [],
   templateUrl: './box.component.html',
-  styleUrl: './box.component.css'
+  styleUrls: ['./box.component.css']
 })
-export class BoxComponent {
+export class BoxComponent implements OnInit {
 
+  constructor(public panierService: PanierService) { }
+
+  ngOnInit(): void {
+  }
+
+  addToPanier(box: any) {
+    this.panierService.ajouterAuPanier(box);
+  }
 }

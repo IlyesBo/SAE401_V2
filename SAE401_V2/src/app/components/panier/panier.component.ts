@@ -1,4 +1,6 @@
+// panier.component.ts
 import { Component, OnInit } from '@angular/core';
+import { PanierService } from '../../panier.service';
 
 @Component({
   selector: 'app-panier',
@@ -6,21 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent implements OnInit {
-  bagBoxes: any[] = []; 
   totalPrix: number = 0;
-  noBoxFound: boolean = true; 
 
-  constructor() { }
+  constructor(public panierService: PanierService) { }
 
   ngOnInit(): void {
+    this.calculerTotalPrix();
   }
 
-
-  suppBox(itemID: any): void {
- 
+  calculerTotalPrix() {
+    this.totalPrix = this.panierService.calculerTotalPrix();
   }
 
-
-  Commander(): void {
+  supprimerDuPanier(index: number) {
+    this.panierService.supprimerDuPanier(index);
+    this.calculerTotalPrix();
   }
 }

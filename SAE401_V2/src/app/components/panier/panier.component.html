@@ -1,19 +1,18 @@
-<section id="ListCommande">
+<!-- panier.component.html -->
+<div id="ListCommande">
     <div class="left-section">
-        <div id="commande" routerLink="/app-bag" routerLinkActive="active" *ngIf="!noBoxFound">
+        <div id="commande">
             <h1>Ma Commande</h1>
             <hr>
             <div class="command-history">
                 <div class="history1">
-                    <div class="command-details" *ngFor="let box of bagBoxes">
+                    <div class="command-details" *ngFor="let box of panierService.panier; let i = index">
                         <ul>
-                            <ng-container *ngFor="let aliment of box.aliments">
-                                <li>{{box.quantite}} X {{box.nom}} </li>
-                            </ng-container>
+                            <li>{{box.quantite}} X {{box.nom}}</li>
                         </ul>
                         <div class="price-quantity">
                             <h3 id="prix">{{box.prixUnite.toFixed(2)}} €</h3>
-                            <button class="remove-button" (click)="suppBox(box.itemID)">Supprimer</button>
+                            <button class="remove-button" (click)="supprimerDuPanier(i)">Supprimer</button>
                         </div>
                     </div>
                 </div>
@@ -25,11 +24,8 @@
                 <button class="commander" (click)="Commander()">Commander</button>
             </div>
         </div>
-        <div *ngIf="noBoxFound" id="panier">
-            <h1>Le panier est vide</h1>
-        </div>
     </div>
-    <div class="right-section">
-        <img src="/assets/Ressources/suchill.png" alt="Logo">
+    <div *ngIf="panierService.panier.length === 0" id="panier">
+        <h1>Le panier est vide</h1>
     </div>
-</section>
+</div>
