@@ -31,7 +31,7 @@ nav{
 /* Ajout des styles CSS */
 
 .background {
-    background-color: black;
+    background-color: rgb(24, 24, 24);
     color: white; /* Couleur du texte sur fond noir */
 }
 
@@ -61,3 +61,13 @@ nav{
 .sushi-text {
     color: orange; /* Couleur du texte orange */
 }
+
+.bg {
+    background-color: #202020;
+}
+
+li {
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+

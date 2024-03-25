@@ -12,7 +12,7 @@
 <body class="background">
 <header>
     <nav class="border-bottom">
-<ul class="nav justify-content-end">
+<ul class="nav justify-content-end, justify-content-center">
     <li class="nav-pic">
         <a><img src= "Ressources/suchill.png" id="logo" alt="logo" href="#"></a>
       </li>
@@ -26,7 +26,12 @@
     <a class="nav-link" href="#">Nos restaurants</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link enabled" href="#" aria-disabled="true"><p>Mon Panier<img id="panier"src= "Ressources/panier.png" alt="logo"></p></a>
+    <button class="btn btn-primary offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+          <path d="M0 1.5C0 .67.67 0 1.5 0h3.787a2 2 0 1 1 3.426 0H15a1 1 0 0 1 1 1v1.22a2 2 0 0 1-.647 1.473l-1.125 1.218H4.272l-1.146 4.676a1 1 0 0 1-.982.804H1.5a.5.5 0 0 0 0 1h1.413a2 2 0 1 1 3.987 0h3.174a2 2 0 0 1 3.973 0H15a.5.5 0 0 1 .492.41L16 11H2.471l.192-.784 1.656-6.744H13l1.137-1.23A.5.5 0 0 0 14.663 2H1.5a.5.5 0 0 0-.5.5v.413a.5.5 0 0 0 1 0V2h12.163a1 1 0 0 1 .92.615L16 3.22V13H1v-1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+      </svg>
+      Panier
+    </button>
   </li>
 </ul>
 </nav>
@@ -53,12 +58,7 @@
 <img src="Ressources/bandeaupromo.png" class="img-fluid" alt="bandeau promo">
 
 <!-- Bouton Panier Offcanvas -->
-<button class="btn btn-primary offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-      <path d="M0 1.5C0 .67.67 0 1.5 0h3.787a2 2 0 1 1 3.426 0H15a1 1 0 0 1 1 1v1.22a2 2 0 0 1-.647 1.473l-1.125 1.218H4.272l-1.146 4.676a1 1 0 0 1-.982.804H1.5a.5.5 0 0 0 0 1h1.413a2 2 0 1 1 3.987 0h3.174a2 2 0 0 1 3.973 0H15a.5.5 0 0 1 .492.41L16 11H2.471l.192-.784 1.656-6.744H13l1.137-1.23A.5.5 0 0 0 14.663 2H1.5a.5.5 0 0 0-.5.5v.413a.5.5 0 0 0 1 0V2h12.163a1 1 0 0 1 .92.615L16 3.22V13H1v-1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
-  </svg>
-  Panier
-</button>
+
 
 <!-- Panier Offcanvas -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
@@ -75,11 +75,13 @@
 </div>
 
 <!-- Boîtes de Sushi -->
+<h2 style="color:orange;">Passez Commande</h2>
+
 <div class="container"  data-bs-theme="dark">
   <div class="row">
       <div class="col-md-4">
           <div class="card">
-              <img src="Ressources/1.png" class="card-img-top" alt="Boîte de Sushi">
+              <img src="Ressources/3.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
                   <h5 class="card-title">Boîte de Sushi</h5>
                   <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
@@ -91,17 +93,67 @@
       </div>
       <div class="col-md-4">
           <div class="card">
-              <img src="sushi-box2.jpg" class="card-img-top" alt="Boîte de Sushi 2">
+              <img src="Ressources/2.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
                   <h5 class="card-title">Boîte de Sushi 2</h5>
-                  <p class="card-text">Délicieux assortiment de rouleaux de sushi.</p>
+                  <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
                   <p class="price">$25.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
               </div>
           </div>
       </div>
+      <div class="col-md-4">
+        <div class="card">
+            <img src="Ressources/1.png" class="card-img-top" alt="Boîte de Sushi">
+            <div class="card-body">
+                <h5 class="card-title">Boîte de Sushi</h5>
+                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <p class="price">$20.00</p>
+                <input type="number" min="1" value="1" class="quantity form-control">
+                <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
+            </div>
+        </div>
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <img src="Ressources/4.png" class="card-img-top" alt="Boîte de Sushi">
+            <div class="card-body">
+                <h5 class="card-title">Boîte de Sushi</h5>
+                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <p class="price">$20.00</p>
+                <input type="number" min="1" value="1" class="quantity form-control">
+                <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <img src="Ressources/5.png" class="card-img-top" alt="Boîte de Sushi">
+            <div class="card-body">
+                <h5 class="card-title">Boîte de Sushi 2</h5>
+                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <p class="price">$25.00</p>
+                <input type="number" min="1" value="1" class="quantity form-control">
+                <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+          <img src="Ressources/6.png" class="card-img-top" alt="Boîte de Sushi">
+          <div class="card-body">
+              <h5 class="card-title">Boîte de Sushi</h5>
+              <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+              <p class="price">$20.00</p>
+              <input type="number" min="1" value="1" class="quantity form-control">
+              <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
+          </div>
+      </div>
   </div>
+</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
