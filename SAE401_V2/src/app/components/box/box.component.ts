@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PanierService } from '../../panier.service';
+import { PanierService } from '../../services/panier.service';
 
 @Component({
   selector: 'app-box',
@@ -14,8 +14,12 @@ export class BoxComponent implements OnInit {
     image: 'assets/images/box1.jpg'
   };
 
-  constructor() { }
+  constructor(private panierService: PanierService) { }
 
   ngOnInit(): void {
+  }
+
+  addToPanier(box: any) {
+    this.panierService.addToPanier(box);
   }
 }

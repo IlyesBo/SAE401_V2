@@ -5,65 +5,78 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class PanierService {
-  bagItemNumber : BehaviorSubject<number>
-  totalPrix : BehaviorSubject<number>
+  bagItemNumber: BehaviorSubject<number>;
+  totalPrix: BehaviorSubject<number>;
+  panierBoxes: BehaviorSubject<any[]>;
 
   constructor() {
     this.bagItemNumber = new BehaviorSubject(0);
     this.totalPrix = new BehaviorSubject(0);
-   }
+    this.panierBoxes = new BehaviorSubject<any[]>([]);
+  }
 
-   changeBoxNumber(newNumber: any) {
+  changeBoxNumber(newNumber: number) {
     this.bagItemNumber.next(newNumber);
-   }
+  }
 
-   checkNewBag() {
-    //Get bag info
+  checkNewBag() {
     let allUsers = JSON.parse(localStorage.getItem("allUsers") || "[]");
     let currentUser = localStorage.getItem("currentUser");
-    let bagCount;
+    let bagCount = 0;
 
-    for(let i = 0; i < allUsers.length; i++) {
-      if(allUsers[i].email == currentUser) {
-        if(allUsers[i].hasOwnProperty("panier")) {
-          bagCount = allUsers[i].bag;
-        } else {
-          bagCount = 0;
+    for (let i = 0; i < allUsers.length; i++) {
+      if (allUsers[i].email === currentUser && allUsers[i].hasOwnProperty("panier")) {
+        bagCount = allUsers[i].panier.length;
+        break;
+      }
+    }
+
+    this.changeBoxNumber(bagCount);
+  }
+
+  addToPanier(box: any) {
+    let currentPanier = this.panierBoxes.value.slice();
+    currentPanier.push(box);
+    this.panierBoxes.next(currentPanier);
+    this.changeBoxNumber(currentPanier.length);
+    this.calculTotal();
+  }
+
+  calculTotal() {
+    let allUsers = JSON.parse(localStorage.getItem("allUsers") || "[]");
+    let currentUser = localStorage.getItem("currentUser");
+    let total = 0;
+
+    for (let i = 0; i < allUsers.length; i++) {
+      if (allUsers[i].email === currentUser && allUsers[i].hasOwnProperty("panier")) {
+        let bagBoxes = allUsers[i].panier;
+
+        for (let j = 0; j < bagBoxes.length; j++) {
+          let multiplication = bagBoxes[j].price * bagBoxes[j].quantity;
+          total += multiplication;
         }
       }
     }
 
-    //Update service
-    if(bagCount > 0) {
-      this.changeBoxNumber(bagCount);
-    } else {
-      this.changeBoxNumber(0);
+    this.totalPrix.next(total);
+  }
+
+  removeBox(id: any) {
+    let currentPanier = this.panierBoxes.value.slice();
+    const index = currentPanier.findIndex(item => item.id === id);
+    if (index !== -1) {
+      currentPanier.splice(index, 1);
+      this.panierBoxes.next(currentPanier);
+      this.changeBoxNumber(currentPanier.length);
+      this.calculTotal();
     }
   }
 
-  calculTotal() {
-    //Get bag info
-    let allUsers = JSON.parse(localStorage.getItem("allUsers") || "[]");
-    let currentUser = localStorage.getItem("currentUser");
-
-    for(let i = 0; i < allUsers.length; i++) {
-      if(allUsers[i].email == currentUser) {
-        let bagBoxes;
-
-        if(allUsers[i].hasOwnProperty("PanierContent")){
-          bagBoxes = allUsers[i].bagContent;
-        } else {
-          bagBoxes = [];
-        }
-
-        let total = 0;
-        
-        for(let i = 0; i < bagBoxes.length; i++) {
-          let multiplication = bagBoxes[i].prixUnité * bagBoxes[i].quantity;
-          total += multiplication;
-        }
-        this.totalPrix.next(total);
-      }    
-    }
+  clearPanier() {
+    this.panierBoxes.next([]);
+    this.changeBoxNumber(0);
+    this.totalPrix.next(0);
   }
+
+
 }
