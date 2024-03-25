@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavService } from '../../services/nav.service';
+import { HeaderService } from '../../services/header.service';
 import { Subscription } from 'rxjs';
 import { PanierService } from '../../services/panier.service';
 
@@ -10,15 +12,12 @@ import { PanierService } from '../../services/panier.service';
 })
 export class PanierComponent implements OnInit, OnDestroy{
 
-  bagBoxes: any[] = [];
-  totalPrix: number = 0;  
+  panierBoxes: any[] = [];
+  totalPrix: number = 0;
   subscription: Subscription;
   noBoxFound: boolean = false;
 
-  constructor(
-    private router: Router,
-    private panierService: PanierService
-  ) {
+  constructor(private router: Router, private nav: NavService, private header: HeaderService, private panierService: PanierService) {
     this.subscription = this.panierService.totalPrix.subscribe((value) => {
       this.totalPrix = value;
     })
@@ -26,35 +25,55 @@ export class PanierComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
     let currentUser = localStorage.getItem("currentUser") || "";
-    if (currentUser === "") {
+    if (currentUser == "") {
       this.router.navigate([`/app-connexion`]);
     }
+    this.nav.changeActive("panier");
+    this.header.greenPanier(true);
     this.panierService.checkNewPanier();
 
-    // Récupération des éléments du panier
-    if (this.panierService.panier.length > 0) {
-      this.bagBoxes = this.panierService.panier;
-    }
+    // Récupération des informations nécessaires
+    let allUsers = JSON.parse(localStorage.getItem("allUsers") || "[]");
+    let userID = allUsers.findIndex(user => user.email === currentUser);
 
+    if (userID !== -1) {
+      this.panierBoxes = allUsers[userID]?.panierContent || [];
+      this.panierService.calculTotal();
+      this.checkBox();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.header.greenPanier(false);
+    this.subscription.unsubscribe();
+  }
+
+  // Supprimer un article du panier
+  suppBox(id: any) {
+    this.panierService.removeBox(id);
+    this.panierBoxes = this.panierService.getPanierBoxes();
     this.panierService.calculTotal();
     this.checkBox();
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-  supprimerDuPanier(index: number) {
-    this.panierService.supprimerDuPanier(index);
-    this.panierService.mettreAJourPanier();
-    this.checkBox();
-  }
-
+  // Vérifier si le panier est vide
   checkBox() {
-    this.noBoxFound = this.bagBoxes.length === 0;
+    this.noBoxFound = this.panierBoxes.length === 0;
   }
 
+  // Passer une commande
   Commander() {
-    this.panierService.commander();
+    const currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+      const commandeNumber = this.panierService.getNextCommandeNumber(currentUser);
+      const historiqueItem = {
+        boxes: this.panierBoxes,
+        price: this.totalPrix,
+        commandeNumber: commandeNumber
+      };
+      this.panierService.addToHistorique(currentUser, historiqueItem);
+      this.panierService.clearPanier(currentUser);
+      this.router.navigate(['/app-compte']);
+    }
   }
 }
