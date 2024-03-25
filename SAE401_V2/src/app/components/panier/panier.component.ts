@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+import { Component, OnInit } from '@angular/core';
+
+// Add export here
+export class PanierComponent implements OnInit {
+  items = [
+    {
+      id: 1,
+      name: 'Box 1',
+      price: 25.99,
+      quantity: 1
+    }
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  getTotal(): number {
+    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  }
+}
+=======
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavService } from '../../services/nav.service';
@@ -77,3 +101,4 @@ export class PanierComponent implements OnInit, OnDestroy{
     }
   }
 }
+>>>>>>> a30a495c9d340a178712c8ee1050bbad88275e6f
