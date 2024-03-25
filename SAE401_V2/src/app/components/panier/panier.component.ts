@@ -1,27 +1,22 @@
-// panier.component.ts
 import { Component, OnInit } from '@angular/core';
-import { PanierService } from '../../panier.service';
 
-@Component({
-  selector: 'app-panier',
-  templateUrl: './panier.component.html',
-  styleUrls: ['./panier.component.css']
-})
+// Add export here
 export class PanierComponent implements OnInit {
-  totalPrix: number = 0;
+  items = [
+    {
+      id: 1,
+      name: 'Box 1',
+      price: 25.99,
+      quantity: 1
+    }
+  ];
 
-  constructor(public panierService: PanierService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.calculerTotalPrix();
   }
 
-  calculerTotalPrix() {
-    this.totalPrix = this.panierService.calculerTotalPrix();
-  }
-
-  supprimerDuPanier(index: number) {
-    this.panierService.supprimerDuPanier(index);
-    this.calculerTotalPrix();
+  getTotal(): number {
+    return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
   }
 }
