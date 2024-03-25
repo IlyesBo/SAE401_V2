@@ -23,7 +23,7 @@
     <a class="nav-link" href="#box">Nos Produits</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Nos restaurants</a>
+    <a class="nav-link" href="#entreprise">Nos restaurants</a>
   </li>
   <li class="nav-item">
     <button class="btn btn-primary offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
@@ -215,11 +215,11 @@
         }
     });
 </script>
-<br>
+<br><br>
 
 <body>
-  <div class="container">
-    <h2>Notre entreprise</h2>
+  <div class="container" id="entreprise">
+    <h2 style="color:orange">Notre entreprise</h2>
     <div class="row">
       <div class="col-md-4">
         <img src="ressources/chef1.png" alt="Directeur général" class="portrait">
@@ -234,19 +234,24 @@
         <p>Directeur marketing</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <img src="ressources/carte.png" alt="Grande image" class="img-fluid">
-      </div>
-      <div class="col-md-6 d-flex align-items-start">
-        <div>
-          <p>Nos cuisines spécialisées se concentrent au mieux pour réaliser les tâches qui leur sont confiées et satisfaire au mieux les clients.</p>
-          <p>Notre site internet nous permet une communication rapide auprès de nos consommateurs.</p>
-          <p>Prochaine ouverture de cuisine le 1er avril 2024 à Meaux.</p>
-          <button class="btn btn-outline-custom" style="color:white;">En savoir plus</button>
+
+
+    <div class="container full-height">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="ressources/carte.png" alt="Grande image" class="img-fluid" style="max-width: 100%;">
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div style="max-width: 80%;">
+            <p>Nos cuisines spécialisées se concentrent au mieux pour réaliser les tâches qui leur sont confiées et satisfaire au mieux les clients.</p>
+            <p>Notre site internet nous permet une communication rapide auprès de nos consommateurs.</p>
+            <p>Prochaine ouverture de cuisine le 1er avril 2024 à Meaux.</p>
+            <button class="btn btn-outline-custom" style="color:white;">En savoir plus</button>
+          </div>
         </div>
       </div>
     </div>
+    
     
     
       <div class="col-md-6">
