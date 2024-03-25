@@ -56,7 +56,6 @@
 
 <img src="Ressources/bandeaupromo.png" class="img-fluid" alt="bandeau promo">
 
-<!-- Bouton Panier Offcanvas -->
 
 
 <!-- Panier Offcanvas -->
@@ -177,7 +176,6 @@
               var existingQuantity = parseInt(existingItem.find(".quantity").text());
               existingItem.find(".quantity").text(existingQuantity + quantity);
           } else {
-              // Si l'article n'existe pas dans le panier, crée un nouvel élément de panier
               var cartItem = `
                   <div class="cart-item">
                       <img src="${box.find("img").attr("src")}" alt="${itemName}">
@@ -233,15 +231,5 @@
     <img src="Ressources/suchill_black.png" alt="Logo_noir" style="max-width: 100px;">
   </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
