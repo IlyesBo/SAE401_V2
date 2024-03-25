@@ -56,7 +56,6 @@
 
 <img src="Ressources/bandeaupromo.png" class="img-fluid" alt="bandeau promo">
 
-<!-- Bouton Panier Offcanvas -->
 
 
 <!-- Panier Offcanvas -->
@@ -82,8 +81,8 @@
           <div class="card">
               <img src="Ressources/3.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
-                  <h5 class="card-title">Salmon Classic</h5>
-                  <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                  <h5 class="card-title">Nigiri Box</h5>
+                  <p class="card-text">poisson sur riz vinaigré.</p>
                   <p class="price">€20.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -94,8 +93,8 @@
           <div class="card">
               <img src="Ressources/2.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
-                  <h5 class="card-title">Boîte de Sushi 2</h5>
-                  <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                  <h5 class="card-title">Maki Box</h5>
+                  <p class="card-text">riz, poisson, légumes enroulés dans algue.</p>
                   <p class="price">€25.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -106,8 +105,8 @@
         <div class="card">
             <img src="Ressources/1.png" class="card-img-top" alt="Boîte de Sushi">
             <div class="card-body">
-                <h5 class="card-title">Boîte de Sushi</h5>
-                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <h5 class="card-title">Temaki Box</h5>
+                <p class="card-text">cône de nori garni.</p>
                 <p class="price">€20.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -120,8 +119,8 @@
         <div class="card">
             <img src="Ressources/4.png" class="card-img-top" alt="Boîte de Sushi">
             <div class="card-body">
-                <h5 class="card-title">Boîte de Sushi</h5>
-                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <h5 class="card-title">Sashimi Box</h5>
+                <p class="card-text">tranches de poisson cru.</p>
                 <p class="price">€20.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -132,8 +131,8 @@
         <div class="card">
             <img src="Ressources/5.png" class="card-img-top" alt="Boîte de Sushi">
             <div class="card-body">
-                <h5 class="card-title">Boîte de Sushi 2</h5>
-                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <h5 class="card-title">Uramaki Box</h5>
+                <p class="card-text">rouleau inversé, riz extérieur.</p>
                 <p class="price">€25.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -144,8 +143,8 @@
       <div class="card">
           <img src="Ressources/6.png" class="card-img-top" alt="Boîte de Sushi">
           <div class="card-body">
-              <h5 class="card-title">Boîte de Sushi</h5>
-              <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+              <h5 class="card-title">Futomaki Box</h5>
+              <p class="card-text">gros rouleau avec multiples ingrédients.</p>
               <p class="price">€20.00</p>
               <input type="number" min="1" value="1" class="quantity form-control">
               <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -180,7 +179,6 @@
               var existingQuantity = parseInt(existingItem.find(".quantity").text());
               existingItem.find(".quantity").text(existingQuantity + quantity);
           } else {
-              // Si l'article n'existe pas dans le panier, crée un nouvel élément de panier
               var cartItem = `
                   <div class="cart-item">
                       <img src="${box.find("img").attr("src")}" alt="${itemName}">
@@ -316,15 +314,5 @@
     <img src="Ressources/suchill_black.png" alt="Logo_noir" style="max-width: 100px;">
   </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
