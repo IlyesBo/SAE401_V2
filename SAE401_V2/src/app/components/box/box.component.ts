@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { PanierService } from '../../panier.service';
 
-// Add export here
+@Component({
+  selector: 'app-box',
+  templateUrl: './box.component.html',
+  styleUrls: ['./box.component.css']
+})
 export class BoxComponent implements OnInit {
   box = {
     id: 1,
