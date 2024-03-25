@@ -1,5 +1,7 @@
 # SAE401
-Bienvenue sur le repository GitHub finale de notre projet universitaire dédié à la création d'un site web de restaurant de sushi et de réservation. Ce projet vise à développer une plateforme moderne et conviviale permettant aux utilisateurs de découvrir notre restaurant, consulter le menu, effectuer des réservations et interagir avec notre équipe.
+Bienvenue sur le repository GitHub finale de notre projet universitaire dédié à la création d'un site web de restaurant de sushi et de réservation. Ce projet vise à développer une plateforme moderne et conviviale permettant aux utilisateurs de découvrir notre restaurant, consulter le menu, effectuer des réservations et interagir avec notre équipe.<br>
+<b>Nous avons un ancien repository que nous avons changé, vous pouvez le consulter ici:</b> https://github.com/IlyesBo/SAE401
+
 
 ![1200px-Logo_Université_Gustave_Eiffel_2020 svg](https://github.com/IlyesBo/SAE401_V2/assets/115214794/4b07b1e9-7b61-44c0-9355-51bab1649920)
 
