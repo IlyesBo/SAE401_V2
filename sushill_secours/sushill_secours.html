@@ -23,7 +23,7 @@
     <a class="nav-link" href="#box">Nos Produits</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Nos restaurants</a>
+    <a class="nav-link" href="#entreprise">Nos restaurants</a>
   </li>
   <li class="nav-item">
     <button class="btn btn-primary offcanvas-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
@@ -56,7 +56,6 @@
 
 <img src="Ressources/bandeaupromo.png" class="img-fluid" alt="bandeau promo">
 
-<!-- Bouton Panier Offcanvas -->
 
 
 <!-- Panier Offcanvas -->
@@ -82,8 +81,8 @@
           <div class="card">
               <img src="Ressources/3.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
-                  <h5 class="card-title">Salmon Classic</h5>
-                  <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                  <h5 class="card-title">Nigiri Box</h5>
+                  <p class="card-text">poisson sur riz vinaigré.</p>
                   <p class="price">€20.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -94,8 +93,8 @@
           <div class="card">
               <img src="Ressources/2.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
-                  <h5 class="card-title">Boîte de Sushi 2</h5>
-                  <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                  <h5 class="card-title">Maki Box</h5>
+                  <p class="card-text">riz, poisson, légumes enroulés dans algue.</p>
                   <p class="price">€25.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -106,8 +105,8 @@
         <div class="card">
             <img src="Ressources/1.png" class="card-img-top" alt="Boîte de Sushi">
             <div class="card-body">
-                <h5 class="card-title">Boîte de Sushi</h5>
-                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <h5 class="card-title">Temaki Box</h5>
+                <p class="card-text">cône de nori garni.</p>
                 <p class="price">€20.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -120,8 +119,8 @@
         <div class="card">
             <img src="Ressources/4.png" class="card-img-top" alt="Boîte de Sushi">
             <div class="card-body">
-                <h5 class="card-title">Boîte de Sushi</h5>
-                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <h5 class="card-title">Sashimi Box</h5>
+                <p class="card-text">tranches de poisson cru.</p>
                 <p class="price">€20.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -132,8 +131,8 @@
         <div class="card">
             <img src="Ressources/5.png" class="card-img-top" alt="Boîte de Sushi">
             <div class="card-body">
-                <h5 class="card-title">Boîte de Sushi 2</h5>
-                <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+                <h5 class="card-title">Uramaki Box</h5>
+                <p class="card-text">rouleau inversé, riz extérieur.</p>
                 <p class="price">€25.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -144,8 +143,8 @@
       <div class="card">
           <img src="Ressources/6.png" class="card-img-top" alt="Boîte de Sushi">
           <div class="card-body">
-              <h5 class="card-title">Boîte de Sushi</h5>
-              <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
+              <h5 class="card-title">Futomaki Box</h5>
+              <p class="card-text">gros rouleau avec multiples ingrédients.</p>
               <p class="price">€20.00</p>
               <input type="number" min="1" value="1" class="quantity form-control">
               <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
@@ -154,6 +153,9 @@
   </div>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
@@ -177,7 +179,6 @@
               var existingQuantity = parseInt(existingItem.find(".quantity").text());
               existingItem.find(".quantity").text(existingQuantity + quantity);
           } else {
-              // Si l'article n'existe pas dans le panier, crée un nouvel élément de panier
               var cartItem = `
                   <div class="cart-item">
                       <img src="${box.find("img").attr("src")}" alt="${itemName}">
@@ -214,7 +215,54 @@
         }
     });
 </script>
-<br>
+<br><br>
+
+<body>
+  <div class="container" id="entreprise">
+    <h2 style="color:orange">Notre entreprise</h2>
+    <div class="row">
+      <div class="col-md-4 text-center"> <!-- Ajout de la classe text-center pour centrer le contenu -->
+        <p>Directeur général</p>
+        <img src="ressources/chef1.png" alt="Directeur général" class="portrait">
+        <p>Yelan Lee-Zek</p>
+      </div>
+      <div class="col-md-4 text-center"> <!-- Ajout de la classe text-center pour centrer le contenu -->
+        <p>Chef restauration</p>
+        <img src="ressources/chef2.png" alt="Chef restauration" class="portrait">
+        <p>Djouris Daprès</p>
+      </div>
+      <div class="col-md-4 text-center"> <!-- Ajout de la classe text-center pour centrer le contenu -->
+        <p>Directeur marketing</p>
+        <img src="ressources/chef3.png" alt="Directeur marketing" class="portrait">
+        <p>Nattempura Rotvert</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="container full-height">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="ressources/carte.png" alt="Grande image" class="img-fluid" style="max-width: 100%;">
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <div style="max-width: 80%;">
+            <p>Nos cuisines spécialisées se concentrent au mieux pour réaliser les tâches qui leur sont confiées et satisfaire au mieux les clients.</p>
+            <p>Notre site internet nous permet une communication rapide auprès de nos consommateurs.</p>
+            <p>Prochaine ouverture de cuisine le 1er avril 2024 à Meaux.</p>
+            <button class="btn btn-outline-custom" style="color:white;">En savoir plus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <div class="col-md-6">
+        <p>Livraison possible à Paris, Pontault, Bordeaux et Marseille (voir carte).</p>
+      </div>
+    </div>
+  </div>
+
 <h2 class="sushi-text" style="color:#E6E6E6">Vous avez un sushi sur votre commande ?</h2>
 <footer class="py-3 my-4 text-center " style="color:black;">
 
@@ -227,21 +275,91 @@
     <div class="conditions">
       <p><a href="/conditions-generales">Copyright © 2023. SuChill . All rights reserved.
         </a></p>
+    
     </div>
   </div>
+  <!-- Button to Open the Modal -->
+<a href="#" data-toggle="modal" data-target="#privacyModal">Voir la politique de confidentialité</a>
+
+<!-- The Modal -->
+<div class="modal" id="privacyModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Politique de Confidentialité</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p>Conformité RGPD - Sushill.fr <br>
+          Chez Sushill.fr, nous prenons la protection de vos données personnelles très au sérieux.
+          Cette politique de confidentialité explique quelles données nous collectons, pourquoi nous
+          les collectons, comment nous les utilisons, les mesures que nous prenons pour protéger ces
+          données, et vos droits en tant qu'utilisateur de notre site web.
+          Données personnelles collectées
+          Sur Sushill.fr, nous collectons les types de données personnelles suivants : <br>
+          ● Adresse e-mail : Pour vous permettre de créer un compte, passer des commandes et
+          recevoir des confirmations de commande.<br>
+          ● Mot de passe : Pour sécuriser votre compte sur notre site web.<br>
+          ● Historique de commande : Pour améliorer notre service client et vous offrir une
+          expérience utilisateur personnalisée.<br>
+          ● Articles ajoutés au panier : Pour faciliter le processus de commande et vous
+          permettre de retrouver vos articles sélectionnés lors de vos visites ultérieures.
+          Utilisation des données personnelles<br>
+          Les données personnelles collectées sur Sushill.fr sont utilisées dans le but suivant :
+          ● Améliorer votre expérience utilisateur sur notre site web. <br>
+          ● Traiter et exécuter vos commandes.<br>
+          ● Vous informer sur le statut de vos commandes.<br>
+          ● Répondre à vos demandes de service client.<br>
+          ● Analyser et améliorer nos services.<br>
+          Stockage et protection des données
+          Vos données personnelles sont stockées de manière sécurisée localement votre appareil.
+          Nous prenons des mesures de sécurité techniques et organisationnelles pour protéger vos
+          données contre tout accès non autorisé, utilisation abusive ou divulgation.<br>
+          <b>Partage des données personnelles</b><br>
+          Nous ne partageons pas vos données personnelles avec des tiers, sauf dans les cas
+          suivants :<br>
+          ● Avec nos prestataires de services de paiement pour traiter vos transactions.<br>
+          ● Lorsque requis par la loi ou en réponse à une demande légale.<br>
+         <b> Conservation des données</b><br>
+          Nous conservons vos données personnelles aussi longtemps que nécessaire pour fournir
+          les services demandés et respecter nos obligations légales. Vous avez le droit de demander
+          la suppression de vos données personnelles à tout moment.
+          Vos droits
+          En tant qu'utilisateur de Sushill.fr, vous avez les droits suivants en ce qui concerne vos
+          données personnelles :<br>
+          ● Droit d'accès : Vous pouvez demander à accéder aux données personnelles que
+          nous détenons à votre sujet.<br>
+          ● Droit de rectification : Vous pouvez demander la correction de toute information
+          inexacte ou incomplète.<br>
+          ● Droit à l'effacement : Vous pouvez demander la suppression de vos données
+          personnelles dans certaines circonstances.<br>
+          ● Droit d'opposition : Vous pouvez vous opposer au traitement de vos données
+          personnelles dans certaines situations.
+          ● Droit à la portabilité des données : Vous pouvez demander la transmission de vos
+          données personnelles à un autre contrôleur de données dans un format structuré et
+          couramment utilisé.<br>
+          <b>Contactez-nous</b><br>
+          Si vous avez des questions concernant notre politique de confidentialité ou si vous souhaitez
+          exercer vos droits en matière de protection des données, veuillez nous contacter à l'adresse
+          suivante : ilyesbo04@gmail.com .</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
   <div class="logo">
+    
     <img src="Ressources/suchill_black.png" alt="Logo_noir" style="max-width: 100px;">
   </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
