@@ -29,6 +29,11 @@ nav{
     width: 5%;
 }
 
+h2{
+    margin-top: 20px;
+    text-align: center;
+}
+
 #panier{
     width: 5%;
 }
@@ -44,9 +49,6 @@ nav{
     border-color: orange !important; /* Changement de la couleur de la bordure en orange */
 }
 
-.price::before {
-    content: "€"; /* Ajout du symbole euro devant le prix */
-}
 
 .offcanvas {
     background-color: black; /* Fond noir pour le panier offcanvas */

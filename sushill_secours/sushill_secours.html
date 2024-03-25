@@ -20,7 +20,7 @@
     <a class="nav-link active" aria-current="page" href="#">Accueil</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Nos Produits</a>
+    <a class="nav-link" href="#box">Nos Produits</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Nos restaurants</a>
@@ -68,7 +68,7 @@
   <div class="offcanvas-body">
       <div class="cart" id="cart">
           <!-- Les articles du panier seront ajoutés ici -->
-          <p class="cart-total">Total: <span class="total">$0.00</span></p>
+          <p class="cart-total">Total: <span class="total">€0.00</span></p>
       </div>
   </div>
 </div>
@@ -76,15 +76,15 @@
 <!-- Boîtes de Sushi -->
 <h2 style="color:orange;">Passez Commande</h2>
 
-<div class="container"  data-bs-theme="dark">
+<div id="box" class="container"  data-bs-theme="dark">
   <div class="row">
       <div class="col-md-4">
           <div class="card">
               <img src="Ressources/3.png" class="card-img-top" alt="Boîte de Sushi">
               <div class="card-body">
-                  <h5 class="card-title">Boîte de Sushi</h5>
+                  <h5 class="card-title">Salmon Classic</h5>
                   <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
-                  <p class="price">$20.00</p>
+                  <p class="price">€20.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
               </div>
@@ -96,7 +96,7 @@
               <div class="card-body">
                   <h5 class="card-title">Boîte de Sushi 2</h5>
                   <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
-                  <p class="price">$25.00</p>
+                  <p class="price">€25.00</p>
                   <input type="number" min="1" value="1" class="quantity form-control">
                   <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
               </div>
@@ -108,7 +108,7 @@
             <div class="card-body">
                 <h5 class="card-title">Boîte de Sushi</h5>
                 <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
-                <p class="price">$20.00</p>
+                <p class="price">€20.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
             </div>
@@ -122,7 +122,7 @@
             <div class="card-body">
                 <h5 class="card-title">Boîte de Sushi</h5>
                 <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
-                <p class="price">$20.00</p>
+                <p class="price">€20.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
             </div>
@@ -134,7 +134,7 @@
             <div class="card-body">
                 <h5 class="card-title">Boîte de Sushi 2</h5>
                 <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
-                <p class="price">$25.00</p>
+                <p class="price">€25.00</p>
                 <input type="number" min="1" value="1" class="quantity form-control">
                 <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
             </div>
@@ -146,7 +146,7 @@
           <div class="card-body">
               <h5 class="card-title">Boîte de Sushi</h5>
               <p class="card-text">Sushi frais, fabriqués quotidiennement avec des ingrédients de qualité.</p>
-              <p class="price">$20.00</p>
+              <p class="price">€20.00</p>
               <input type="number" min="1" value="1" class="quantity form-control">
               <button class="add-to-cart btn btn-primary">Ajouter au Panier</button>
           </div>
@@ -162,7 +162,7 @@
       $(".add-to-cart").click(function () {
           var box = $(this).closest(".card");
           var itemName = box.find(".card-title").text();
-          var itemPrice = parseFloat(box.find(".price").text().replace("$", ""));
+          var itemPrice = parseFloat(box.find(".price").text().replace("€", ""));
           var quantity = parseInt(box.find(".quantity").val());
 
           var cart = $("#cart");
@@ -183,9 +183,10 @@
                       <img src="${box.find("img").attr("src")}" alt="${itemName}">
                       <div class="cart-item-details">
                           <h2 class="item-name">${itemName}</h2>
-                          <p class="price">$${itemPrice.toFixed(2)}</p>
+                          <p class="price">€${itemPrice.toFixed(2)}</p>
                           <p>Quantité: <span class="quantity">${quantity}</span></p>
                           <button class="remove-item btn btn-danger">Retirer</button>
+                         <a href="#box" class="btn btn-secondary">Ajouter des articles</button></a>
                       </div>
                   </div>
               `;
@@ -205,11 +206,11 @@
           var total = 0;
           $(".cart-item").each(function ()
           {
-                var price = parseFloat($(this).find(".price").text().replace("$", ""));
+                var price = parseFloat($(this).find(".price").text().replace("€", ""));
                 var quantity = parseInt($(this).find(".quantity").text());
                 total += price * quantity;
             });
-            $(".cart-total .total").text("$" + total.toFixed(2));
+            $(".cart-total .total").text("€" + total.toFixed(2));
         }
     });
 </script>
